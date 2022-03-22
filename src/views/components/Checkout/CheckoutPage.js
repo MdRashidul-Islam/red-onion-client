@@ -8,7 +8,7 @@ const CheckoutPage = () => {
   const [foods, setFoods] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/orders/${user?.email}`)
+    fetch(`https://glacial-tor-09174.herokuapp.com/orders/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setFoods(data));
   }, []);

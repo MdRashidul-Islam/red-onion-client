@@ -23,7 +23,7 @@ const Checkout = ({ checkoutProducts, quantity }) => {
     data.email = user.email;
     data.name = user.displayName;
 
-    fetch("http://localhost:5000/orders", {
+    fetch("https://glacial-tor-09174.herokuapp.com/orders", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -39,7 +39,7 @@ const Checkout = ({ checkoutProducts, quantity }) => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/orders/${user.email}`)
+    fetch(`https://glacial-tor-09174.herokuapp.com/orders/${user.email}`)
       .then((res) => res.json())
       .then((data) => setProducts(data));
   }, [products]);
@@ -54,7 +54,7 @@ const Checkout = ({ checkoutProducts, quantity }) => {
       confirmButtonText: "DELETE",
     }).then((result) => {
       if (result.isConfirmed) {
-        const url = `http://localhost:5000/order/${id}`;
+        const url = `https://glacial-tor-09174.herokuapp.com/order/${id}`;
         fetch(url, {
           method: "DELETE",
         })

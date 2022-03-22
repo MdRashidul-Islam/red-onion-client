@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import useFoodData from "../../../hooks/useFoodData";
 import PrivateRoute from "../../../routes/PrivateRoute";
 import Checkout from "../Checkout/Checkout";
 import CheckoutPage from "../Checkout/CheckoutPage";
@@ -23,7 +22,7 @@ const Main = () => {
   const [displayFoods, setDisplayFoods] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/foods")
+    fetch("https://glacial-tor-09174.herokuapp.com/foods")
       .then((res) => res.json())
       .then((data) => setFoodData(data));
   }, []);

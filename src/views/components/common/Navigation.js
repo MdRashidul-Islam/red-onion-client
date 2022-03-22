@@ -1,20 +1,17 @@
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import Badge from "@mui/material/Badge";
 import React, { useEffect, useState } from "react";
-import { FaShoppingCart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import logo from "../../../assets/logo2.png";
 import useAuth from "../../../hooks/useAuth";
-
-import IconButton from "@mui/material/IconButton";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import Badge from "@mui/material/Badge";
 
 const Navigation = () => {
   const { user, logOut } = useAuth();
   const [foods, setFoods] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/orders/${user?.email}`)
+    fetch(`https://glacial-tor-09174.herokuapp.com/orders/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setFoods(data));
   }, [foods]);

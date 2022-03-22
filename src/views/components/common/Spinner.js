@@ -9,7 +9,7 @@ const override = css`
 `;
 
 const Spinner = () => {
-  let [color, setColor] = useState("#1CC7C1");
+  let [color] = useState("#1CC7C1");
   return (
     <div>
       <HashLoader color={color} css={override} size={100} />
